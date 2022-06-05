@@ -1,0 +1,21 @@
+{% extends "base_auth.html" %} 
+{% block title %} About {% endblock %}
+{% block content %}
+
+<main>
+  <div class="container py-2">
+    <div class="p-5 mb-4 bg-light rounded-3 text-white bg-dark">
+      <div class="container-fluid py-5">
+        <h1 class="display-6 fw-bold">Expense Manager</h1>
+        <p class="col-md-8 fs-4">
+          A robust tool to manage your income and expenses with features of
+          visualizing data according to month. Various options to export data in
+          formats like .csv, .xls and pdf.
+        </p>
+        <a href={% url 'home' %} class="btn btn-primary btn-sm" type="button">Try Now</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends "base_auth.html" %}
+{% block title %} Login {% endblock %}
+{% block content %} {% load static %}
+
+
+<div class="row m-3">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <h3 class="text-primary text-center">
+      Estimate your Expenses with our Latest Expense Manager
+    </h3>
+    <div class="card mt-4">
+      <div class="card-body" style="">
+        <div class="card-title py-3">
+          <h4>Login</h4>
+        </div>
+
+        <form action="{% url 'login' %}" method="post" class="">
+          {% csrf_token %} {% include "partials/_messages.html" %}
+          <div class="form-group">
+            <input
+              class="form-control form-control-sm mt-2"
+              id="usernameField"
+              name="username"
+              placeholder="Username ?"
+              value="{{ fieldValues.username }}"
+              type="text"
+            />
+          </div>
+          <div
+            class="usernamefeedbackArea invalid-feedback"
+            style="display: none"
+          >
+            <p></p>
+          </div>
+          <div class="form-group">
+            <input
+              class="form-control form-control-sm mt-2"
+              id="passwordField"
+              name="password"
+              placeholder="Password ?"
+              type="password"
+            />
+            <small
+              class="float-right py-2 showPasswordToggle"
+              style="float: right"
+              >SHOW</small
+            >
+          </div>
+
+          <input
+            class="btn btn-block btn-primary mt-3 submit-btn"
+            type="submit"
+            value="Login"
+          />or <a class="" href={% url 'register' %}>Register</a>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4"></div>
+
+  {% endblock %}
+</d>

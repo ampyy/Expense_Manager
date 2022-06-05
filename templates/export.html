@@ -1,0 +1,30 @@
+{% extends "base.html" %} {% load static %} {% block title %} Export Data
+Formats{% endblock %} {% block content %}
+
+<div class="container mt-4">
+  <div class="">
+    <div class="">
+      <h4>Download Expenses</h4>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <a href="{% url 'export-csv' %}" href="">Download CSV</a>
+        </li>
+        <li class="list-group-item">
+          <a href="{% url 'export-excel' %}" href="">Download Excel</a>
+        </li>
+      </ul>
+    </div>
+    <div class="mt-5">
+      <h4>Download Income</h4>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <a href="{% url 'export-csv-income' %}" href="">Download CSV</a>
+        </li>
+        <li class="list-group-item">
+          <a href="{% url 'export-excel-income' %}">Download Excel</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}

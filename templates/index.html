@@ -1,0 +1,36 @@
+{% extends "base.html" %} {% load static %} {% block title %}Index{% endblock %}
+{% block content %}
+<div class="container mt-4">
+  {% include "partials/_messages.html" %}
+  <h4 class="m-3">Main Page</h4>
+  <div class="row mt-2">
+    <div class="col-md-6 m-3">
+      <div class="card" style="width: 18rem">
+        <div class="card-body">
+          <h5 class="card-title">Expenses</h5>
+          <p class="card-text">
+            Total Expenses : <b class="text-warning">Rs {{exp_amount}}</b>
+          </p>
+          <a href="{% url 'expenses' %}" class="btn btn-primary btn-sm rounded"
+            >View Details</a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 m-3">
+      <div class="card" style="width: 18rem">
+        <div class="card-body">
+          <h5 class="card-title">Income</h5>
+          <p class="card-text">
+            Total Expenses : <b class="text-success">Rs {{inc_amount}}</b>
+          </p>
+          <a href="{% url 'income' %}" class="btn btn-primary btn-sm rounded"
+            >View Details</a
+          >
+        </div>
+      </div>
+    </div>
+  </div></div>
+</div>
+
+{% endblock %}
