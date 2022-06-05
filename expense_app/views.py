@@ -60,11 +60,9 @@ def index(request):
     paginator = Paginator(expenses, 5)
     page_number = request.GET.get('page')
     page_obj = Paginator.get_page(paginator, page_number)
-    currency = UserPreferences.objects.get(user=request.user).currency
     context = {
         'expenses': expenses,
-        'page_obj': page_obj,
-        'currency': currency
+        'page_obj': page_obj
     }
     return render(request, "expenses/index.html", context)
 
@@ -294,11 +292,9 @@ def income(request):
     paginator = Paginator(income, 5)
     page_number = request.GET.get('page')
     page_obj = Paginator.get_page(paginator, page_number)
-    currency = UserPreferences.objects.get(user=request.user).currency
     context = {
         'income': income,
         'page_obj': page_obj,
-        'currency': currency
     }
     return render(request, 'income/index.html', context)
 
